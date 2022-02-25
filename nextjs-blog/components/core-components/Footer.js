@@ -15,7 +15,7 @@ const Footer = () => {
       >
         <MuiNextLink
           sx={{ textDecoration: "none", color: 'black' }}
-          href="https://twitter.com/straightupjac"
+          href="https://twitter.com/straightup"
           target="_blank"
           rel="noopener noreferrer"
         >

@@ -1,4 +1,4 @@
-import { Button, Card, CardActions, CardContent, Input, Typography } from '@mui/material';
+import { Button, Card, CardActions, CardContent, Input, Box, Typography } from '@mui/material';
 import Image from 'next/image';
 
 const MintNFTCard = ({title, description, action, canMint, showNumToMint, setNumToMint, mintStatus}) => {
@@ -18,12 +18,16 @@ const MintNFTCard = ({title, description, action, canMint, showNumToMint, setNum
       </CardContent>
       <CardActions>
         {showNumToMint &&
-          <Input onChange={handleChange} defaultValue={2} type="number" label="number to mint"
+          <Input onChange={handleChange} defaultValue={3} type="range" name="hi" id="good"  label="number to mint"
+          min="0" max="5" step="1"
             sx={{mx: 3}}
-          />}
+          />
+        && <Box></Box>
+          }
         <Button disabled={!canMint} onClick={action} variant="contained">Mint</Button>
       </CardActions>
     </Card>
+    
   );
 }
 

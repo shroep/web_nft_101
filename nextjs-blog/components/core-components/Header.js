@@ -13,6 +13,9 @@ import KeyboardArrowUp from "@mui/icons-material/KeyboardArrowUp";
 import BackToTop from "@components/core-components/BackToTop";
 import Connect from "@components/web3/connect";
 import { Stack } from "@mui/material";
+import { Twitter } from "@mui/icons-material";
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
+
 
 const Offset = styled("div")(({ theme }) => theme.mixins.toolbar);
 
@@ -25,7 +28,7 @@ const Header = () => {
   return (
     <>
     {/* <HideOnScroll> */}
-        <AppBar position="fixed" sx={{ backgroundColor: '#FFFFFF' }} elevation={0}>
+        <AppBar position="fixed" sx={{ backgroundColor: '#0b0b0b' }} elevation={0}>
           <Toolbar>
             <Container
               maxWidth="lg"
@@ -41,6 +44,27 @@ const Header = () => {
                   />
                 </MuiNextLink>
               </IconButton>
+          <MuiNextLink
+          sx={{ textDecoration: "none", color: 'white' }}
+          href="https://twitter.com/TopDogCrew"
+          target="_blank"
+          //right="700px"
+          rel="noopener noreferrer"
+          //position=""
+        >
+          <Twitter fontSize="large" />
+        </MuiNextLink>
+        <MuiNextLink
+          sx={{ textDecoration: "none", color: 'white' }}
+          href="https://discord.gg/talesoftsuki"
+          target="_blank"
+          //right="700px"
+          rel="noopener noreferrer"
+          //position=""
+        >
+          <Twitter fontSize="large" />
+        </MuiNextLink>
+        
               <Stack direction="row" alignItems='center'>
                 <Navbar navLinks={navLinks} />
                 <SideDrawer navLinks={navLinks} />

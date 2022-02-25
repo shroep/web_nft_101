@@ -1,7 +1,7 @@
 import { Grid, Stack } from '@mui/material';
 import { useWeb3React } from '@web3-react/core';
 import { useEffect, useState } from 'react';
-import { mintGift, mintPublic, mintWhitelist, sampleNFT } from '@pages/utils/_web3';
+import { /*mintGift,*/ mintPublic, mintWhitelist, sampleNFT } from '@pages/utils/_web3';
 import MintNFTCard from './mint-nft-card';
 import useSWR from 'swr';
 import Web3 from 'web3';
@@ -16,11 +16,11 @@ const MintNFT = () => {
   const fetcher = (url) => fetch(url).then((res) => res.json());
   const { active, account, chainId } = useWeb3React();
 
-  const [giftClaimable, setGiftClaimable] = useState(NOT_CLAIMABLE);
+  //const [giftClaimable, setGiftClaimable] = useState(NOT_CLAIMABLE);
   const [whitelistClaimable, setWhitelistClaimable] = useState(NOT_CLAIMABLE);
   const [alreadyClaimed, setAlreadyClaimed] = useState(false);
 
-  const [giftMintStatus, setGiftMintStatus] = useState();
+  //const [giftMintStatus, setGiftMintStatus] = useState();
   const [whitelistMintStatus, setWhitelistMintStatus] = useState();
   const [publicMintStatus, setPublicMintStatus] = useState();
 
@@ -42,7 +42,7 @@ const MintNFT = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [account])
 
-
+/*
   let giftProof = [];
   let giftValid = false;
   const giftRes = useSWR(active && account ? `/api/giftProof?address=${account}` : null, {
@@ -52,7 +52,8 @@ const MintNFT = () => {
     giftProof = proof;
     giftValid = valid;
   }
-
+  */
+/*
   useEffect(() => {
     if (!active || !giftValid) {
       setGiftClaimable(NOT_CLAIMABLE);
@@ -71,7 +72,7 @@ const MintNFT = () => {
     }
     validateClaim();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [giftProof])
+  }, [giftProof])*/
 
   let whitelistProof = [];
   let whitelistValid = false;
@@ -105,12 +106,12 @@ const MintNFT = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [whitelistProof])
 
-
+/*
   const onMintGift = async () => {
     const { success, status } = await mintGift(account, giftProof);
     console.log(status);
     setGiftMintStatus(success);
-  };
+  };*/
 
   const onMintWhitelist = async () => {
     const { success, status } = await mintWhitelist(account, whitelistProof);
@@ -128,16 +129,8 @@ const MintNFT = () => {
     <>
       <Stack id="demo">
         <h2>Mint an NFT</h2>
-        <Grid container spacing={3} justifyContent="center" alignItems="center">
-          <Grid item>
-            <MintNFTCard
-              title={'Gift Mint'}
-              description={'Mint this sample NFT to the connected wallet. Must be on gift whitelist.'}
-              canMint={giftClaimable}
-              mintStatus={giftMintStatus}
-              action={onMintGift}
-            />
-          </Grid>
+        <Grid container spacing={2} justifyContent="center" alignItems="center">
+          
           <Grid item>
             <MintNFTCard
               title={'Whitelist Mint'}

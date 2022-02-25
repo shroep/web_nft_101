@@ -5,6 +5,7 @@ import { Container, Stack } from '@mui/material';
 import GetStarted from '@components/GetStarted';
 import MintNFT from '@components/web3/mint-nft';
 
+//THE TOP OF THE PAGE BELOW HEADER
 export default function Home() {
   return (
     <Container>
@@ -16,16 +17,16 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          NFT Lazy Minting with Merkle Whitelist Web3 Scaffold
+          Top Dog Affiliation
         </h1>
 
         <p className={styles.description}>
           <Stack spacing={1}>
             <p>
-              Bootstrap an NFT minting site with merkle whitelists.
+              The dogs you'll remember
             </p>
             <p>
-            Created by <code className={styles.code}><a href="https://twitter.com/straightupjac" target="_blank" rel="noreferrer">@straightupjac</a></code>, inspired by <MuiNextLink href="https://github.com/scaffold-eth/scaffold-eth/tree/buyer-mints-nft" target="_blank">Scaffold-eth</MuiNextLink>
+            Created by <code className={styles.code}><a href="https://twitter.com/straightup" target="_blank" rel="noreferrer">@straightupjac</a></code>, inspired by <MuiNextLink href="https://github.com/scaffold-eth/scaffold-eth/tree/buyer-mints-nft" target="_blank">Scaffold-eth</MuiNextLink>
             </p>
           </Stack>
         </p>
