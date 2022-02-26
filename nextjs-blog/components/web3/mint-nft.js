@@ -133,43 +133,35 @@ const MintNFT = () => {
   return (
     <>
     
-        <h1>Mint an NFT</h1>
-        <Grid container spacing={13} justifyContent="center" alignItems="center">
-          {/*
-          <Grid item>
-            <MintNFTCard
-              title={'Whitelist Mint'}
-              description={'Mint this sample NFT to the connected wallet. Must be on whitelist. Cost: 0.01 ETH'}
-              canMint={whitelistClaimable}
-              mintStatus={whitelistMintStatus}
-              action={onMintWhitelist}
-            />
-          </Grid>
-          */}
-      <Grid item xs={12} md={6} lg={6}>
-      <Card sx={{ Width: 500 }}>
-      <CardContent>
-        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-        
-        </Typography>
-        <Image alt="sample NFT" src={profilePic} width={500} height={500}/>
-        
-      </CardContent>
-      </Card>
-      </Grid>
+      <h1>Mint an NFT</h1>
+      <Grid container spacing={3}  direction="row" justifyContent="left" alignItems="left">
+        <Grid item lg={6} zeroMinWidth>
+          <Card sx={{ Width: 500 }}>
 
-          <Grid item xs={12} md={6} lg={6} zeroMinWidth>
+          <CardContent>
+            <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+            
+            </Typography>
+            <Image alt="sample NFT" src={profilePic} width={500} height={500}/>
+            
+          </CardContent>
+          </Card>
+          </Grid>
+
+       <Grid item lg={5} zeroMinWidth>
             <MintNFTCard
               title={'Public Mint'}
               description={'Open to everyone'}
+              amount = {'Amount: '}
+              total = {'Total: '}
               canMint={active}
               mintStatus={publicMintStatus}
               showNumToMint={true}
               setNumToMint={setNumToMint}
               action={onPublicMint}
             />
-          </Grid>
-        </Grid>
+          </Grid> 
+      </Grid>
       
     </>
   );
