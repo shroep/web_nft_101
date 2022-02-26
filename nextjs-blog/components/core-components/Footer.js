@@ -11,7 +11,7 @@ const Footer = () => {
       <Stack
         direction="row"
         alignItems="center"
-        spacing={4}
+        spacing={8}
       >
         <MuiNextLink
           sx={{ textDecoration: "none", color: 'black' }}
@@ -22,7 +22,7 @@ const Footer = () => {
           <Twitter fontSize="large" />
         </MuiNextLink>
         <Typography >
-          © {new Date().getFullYear()}
+          Top Dog Affiliation  ©{new Date().getFullYear()}
         </Typography>
       </Stack>
   </Box>);

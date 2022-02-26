@@ -7,8 +7,9 @@ import profilePic from '/public/draft-3.png'
 
 const GetStarted = () => {
   return (
+    
     <Container width="100%">
-      <Grid container justifyContent="center" alignItems="center">
+      <Grid container justifyContent="left" alignItems="center">
       <Card sx={{ maxWidth: 500 }}>
       <CardContent>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
@@ -18,9 +19,6 @@ const GetStarted = () => {
         
       </CardContent>
       </Card>
-       
-        
-
       </Grid>
     </Container>
 );

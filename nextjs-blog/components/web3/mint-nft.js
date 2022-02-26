@@ -5,6 +5,11 @@ import { /*mintGift,*/ mintPublic, mintWhitelist, sampleNFT } from '@pages/utils
 import MintNFTCard from './mint-nft-card';
 import useSWR from 'swr';
 import Web3 from 'web3';
+import { Container } from '@mui/material';
+import styles from '../../styles/Home.module.css';
+import { Button, Card, CardActions, CardContent, Input, Box, Typography } from '@mui/material';
+import Image from 'next/image';
+import profilePic from '/public/draft-3.png'
 
 const NOT_CLAIMABLE = 0;
 const ALREADY_CLAIMED = 1;
@@ -93,7 +98,7 @@ const MintNFT = () => {
       return;
     }
     async function validateClaim() {
-      const amount = '0.01';
+      const amount = '0.1';
       const amountToWei = web3.utils.toWei(amount, 'ether');
       sampleNFT.methods.mintWhitelist(whitelistProof).call({ from: account, value: amountToWei }).then(() => {
         setWhitelistClaimable(CLAIMABLE);
@@ -127,10 +132,10 @@ const MintNFT = () => {
 
   return (
     <>
-      <Stack id="demo">
-        <h2>Mint an NFT</h2>
-        <Grid container spacing={2} justifyContent="center" alignItems="center">
-          
+    
+        <h1>Mint an NFT</h1>
+        <Grid container spacing={13} justifyContent="center" alignItems="center">
+          {/*
           <Grid item>
             <MintNFTCard
               title={'Whitelist Mint'}
@@ -140,10 +145,23 @@ const MintNFT = () => {
               action={onMintWhitelist}
             />
           </Grid>
-          <Grid item>
+          */}
+      <Grid item xs={12} md={6} lg={6}>
+      <Card sx={{ Width: 500 }}>
+      <CardContent>
+        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+        
+        </Typography>
+        <Image alt="sample NFT" src={profilePic} width={500} height={500}/>
+        
+      </CardContent>
+      </Card>
+      </Grid>
+
+          <Grid item xs={12} md={6} lg={6} zeroMinWidth>
             <MintNFTCard
               title={'Public Mint'}
-              description={'Mint this sample NFT to the connected wallet. Open for any wallet to mint. Cost: 0.02 ETH'}
+              description={'Open to everyone'}
               canMint={active}
               mintStatus={publicMintStatus}
               showNumToMint={true}
@@ -152,7 +170,7 @@ const MintNFT = () => {
             />
           </Grid>
         </Grid>
-      </Stack>
+      
     </>
   );
 }

@@ -2,7 +2,7 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import MuiNextLink from '@components/core-components/MuiNextLink';
 import { Container, Stack } from '@mui/material';
-import GetStarted from '@components/GetStarted';
+//import GetStarted from '@components/GetStarted';
 import MintNFT from '@components/web3/mint-nft';
 
 //THE TOP OF THE PAGE BELOW HEADER
@@ -17,21 +17,22 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Top Dog Affiliation
+          Top Dog Release
         </h1>
-
+{}
         <p className={styles.description}>
           <Stack spacing={1}>
             <p>
-              The dogs you'll remember
+              {/*TEXT ABOVE IMAGE*/}
             </p>
             <p>
             Created by <code className={styles.code}><a href="https://twitter.com/straightup" target="_blank" rel="noreferrer">@straightupjac</a></code>, inspired by <MuiNextLink href="https://github.com/scaffold-eth/scaffold-eth/tree/buyer-mints-nft" target="_blank">Scaffold-eth</MuiNextLink>
             </p>
           </Stack>
         </p>
-        <GetStarted />
-        <MintNFT />
+         {/*<GetStarted />*/}<MintNFT />
+       
+        
       </main>
     </Container>
   )
