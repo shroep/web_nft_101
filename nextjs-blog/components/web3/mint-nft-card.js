@@ -31,9 +31,9 @@ const MintNFTCard = ({title, description,amount,total, action, canMint, showNumT
          sx={{mx: 3}}
        />}
       
-        
-      </CardActions>
       <Button alignItems="center" style={{maxWidth: '400px', maxHeight: '100px', minWidth: '350px', minHeight: '100px'}} sx={{ fontSize: 30 }} disabled={!canMint} onClick={action} variant="contained">Mint</Button>
+      </CardActions>
+      
     </Card>
     
   );

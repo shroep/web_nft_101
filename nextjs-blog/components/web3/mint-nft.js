@@ -135,18 +135,7 @@ const MintNFT = () => {
     
       <h1>Mint an NFT</h1>
       <Grid container spacing={3}  direction="row" justifyContent="left" alignItems="left">
-        <Grid item lg={6} zeroMinWidth>
-          <Card sx={{ Width: 500 }}>
-
-          <CardContent>
-            <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-            
-            </Typography>
-            <Image alt="sample NFT" src={profilePic} width={500} height={500}/>
-            
-          </CardContent>
-          </Card>
-          </Grid>
+        
 
        <Grid item lg={5} zeroMinWidth>
             <MintNFTCard
