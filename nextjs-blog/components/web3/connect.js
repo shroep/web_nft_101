@@ -62,13 +62,11 @@ export default function Connect() {
   return (
     <Box sx={{textAlign: 'center'}}>
     {!active ? (
-      <CustomButton variant="contained"
-        disableElevation
-        onClick={handleConnect}
-        >
+        <CustomButton 
+          variant="contained" disableElevation onClick={handleConnect}>
           Connect Wallet
         </CustomButton>
-        ) :
+       ) :
     <div>
       <Connected
         variant="contained"
@@ -122,8 +120,10 @@ export default function Connect() {
 }
 
 const CustomButton = muiStyled(Button)(({ theme }) => ({
+  backgroundColor: '#8b0000',
+  color: 'white',
   borderRadius: '20px',
-  height: '45px',
+  height: '40px',
   fontSize: '1.2rem',
   fontFamily: [
     'Space Mono,monospace',
